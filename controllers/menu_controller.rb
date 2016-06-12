@@ -56,7 +56,7 @@ class MenuController
 
   def create_entry
     system "clear"
-    puts "New ADdressBloc Entry"
+    puts "New AddressBloc Entry"
 
     print "Name: "
     name = gets.chomp
@@ -98,7 +98,7 @@ class MenuController
           main_menu
        else
           system "clear"
-          puts "#{selction} is not a valid input"
+          puts "#{selection} is not a valid input"
           entry_submenu(entry)
       end
     end
