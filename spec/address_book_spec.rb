@@ -5,9 +5,10 @@ RSpec.describe AddressBook do
   let(:book) { AddressBook.new }
 
    def check_entry(entry, expected_name, expected_number, expected_email)
-       expect(entry).to be_a Entry
-       check_entry(entry, "Bill", "555-555-4854", "bill@blocmail.com")
-     end
+     expect(entry.name).to eq expected_name
+     expect(entry.phone_number).to eq expected_number
+     expect(entry.email).to eq expected_email
+   end
  
      it "searches AddressBook for Bob" do
        book.import_from_csv("entries.csv")
@@ -36,6 +37,5 @@ RSpec.describe AddressBook do
        expect(entry).to be_a Entry
        check_entry(entry, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
- 
-   end
+
  end
